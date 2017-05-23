@@ -36,8 +36,11 @@ public class AdsController : MonoBehaviour
 
     void LoadAd(string scene)
     {
-        RequestInterstitial("ca-app-pub-8590749586245563/3919242533");
-        RequestBanner("ca-app-pub-8590749586245563/9965776133");
+		if (UserSettings.shouldShowAds) {
+			RequestInterstitial("ca-app-pub-8590749586245563/3919242533");
+			RequestBanner("ca-app-pub-8590749586245563/9965776133");
+		}
+        
 
 //        switch(scene)
 //        {
